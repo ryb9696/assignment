@@ -32,8 +32,10 @@ pipeline {
             }
             steps {
                 script {
-                    // Run test-specific actions here
-                    echo "Testing..."
+                    sh "chmod +x deploy.sh" // Ensure execute permission for the script
+                    sh "./deploy.sh" // Execute the deploy script
+
+                    echo "Test successful"
                 }
             }
         }
@@ -44,8 +46,10 @@ pipeline {
             }
             steps {
                 script {
-                    // Run deployment-specific actions here
-                    echo "Deploying..."
+                    sh "chmod +x deploy.sh" // Ensure execute permission for the script
+                    sh "./deploy.sh" // Execute the deploy script
+
+                    echo "Deploy successful"
                 }
             }
         }
