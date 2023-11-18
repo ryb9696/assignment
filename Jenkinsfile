@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     // Checkout the selected branch
-                    checkout([$class: 'GitSCM', branches: [[name: params.BRANCH]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'your_repo_url']]])
+                    checkout([$class: 'GitSCM', branches: [[name: params.BRANCH]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/ryb9696/assignment.git']]])
                 }
             }
         }
@@ -55,11 +55,6 @@ pipeline {
         always {
             // Clean up workspace after the build
             cleanWs()
-        }
-    }
-}
-
-            }
         }
     }
 }
